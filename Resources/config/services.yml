@@ -1,0 +1,18 @@
+parameters:
+  aw_propel_sms_template_admin.sms_template_group: Message templates
+  aw_propel_sms_template_admin.sms_template_label: SMS Templates
+
+services:
+  aw_propel_sms_template_admin.model_manager:
+     class: Accurateweb\PropelSmsTemplateAdminBundle\Model\ModelManager
+
+  aw_propel_sms_template_admin.sms_template:
+    class: Accurateweb\PropelSmsTemplateAdminBundle\Admin\SmsTemplateAdmin
+    tags:
+        - { name: sonata.admin, manager_type: propel, group: %aw_propel_sms_template_admin.sms_template_group%, label: %aw_propel_sms_template_admin.sms_template_label% }
+    arguments:
+        - null
+        - Accurateweb\PatientPortalBundle\Model\Sms\SmsTemplate\SmsTemplate
+        - SonataAdminBundle:CRUD
+    calls:
+        - [setModelManager, ['@aw_propel_sms_template_admin.model_manager'] ]
