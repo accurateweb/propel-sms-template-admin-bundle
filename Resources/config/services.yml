@@ -5,6 +5,8 @@ parameters:
 services:
   aw_propel_sms_template_admin.model_manager:
      class: Accurateweb\PropelSmsTemplateAdminBundle\Model\ModelManager
+     arguments:
+       - @aw_sms.template.factory
 
   aw_propel_sms_template_admin.sms_template:
     class: Accurateweb\PropelSmsTemplateAdminBundle\Admin\SmsTemplateAdmin
@@ -16,3 +18,4 @@ services:
         - SonataAdminBundle:CRUD
     calls:
         - [setModelManager, ['@aw_propel_sms_template_admin.model_manager'] ]
+        - [setTemplate, [edit, AccuratewebPropelSmsTemplateAdminBundle:SmsTemplateAdmin:edit.html.twig]]
