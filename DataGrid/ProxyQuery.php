@@ -46,6 +46,9 @@ class ProxyQuery extends \Sonata\PropelAdminBundle\Datagrid\ProxyQuery
           $found = true;
           $newResult->append($existingTemplateObject);
 
+          $existingTemplateObject->setDescription($template->getDescription());
+          $existingTemplateObject->setSupportedVariables($template->getSupportedVariables());
+
           break;
         }
       }
