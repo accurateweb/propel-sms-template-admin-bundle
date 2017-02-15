@@ -1,0 +1,8 @@
+{
+  "name": "accurateweb/propel-sms-template-admin-bundle",
+  "autoload": {
+    "psr-4" : {
+      "Accurateweb\\PropelSmsTemplateAdminBundle\\" : ""
+    }
+  }
+}
