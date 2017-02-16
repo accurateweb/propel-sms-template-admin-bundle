@@ -36,9 +36,9 @@
                 {% endblock %}
 
                 <div class="tab-content">
-                    <div>
-                        Доступные переменные:
-                        <table>
+                    <div class="supported-variable-list-container">
+                        <div class="sonata-bc h3">Доступные переменные:</div>
+                        <table class="supported-variable-list">
                             {% for var, val in object.supportedVariables %}
                                 <tr>
                                     <td>%{{ var }}%</td>
