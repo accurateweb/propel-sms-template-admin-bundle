@@ -65,7 +65,10 @@ class SmsTemplateAdmin extends Admin
   protected function configureRoutes(RouteCollection $collection)
   {
     // to remove a single route
-    $collection->remove('delete');
+    $collection
+      ->remove('show')
+      ->remove('create')
+      ->remove('delete');
     // OR remove all route except named ones
     //$collection->clearExcept(array('list', 'show'));
   }

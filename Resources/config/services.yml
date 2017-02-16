@@ -11,7 +11,12 @@ services:
   aw_propel_sms_template_admin.sms_template:
     class: Accurateweb\PropelSmsTemplateAdminBundle\Admin\SmsTemplateAdmin
     tags:
-        - { name: sonata.admin, manager_type: propel, group: %aw_propel_sms_template_admin.sms_template_group%, label: %aw_propel_sms_template_admin.sms_template_label% }
+        -
+          name: sonata.admin
+          manager_type: propel
+          group: %aw_propel_sms_template_admin.sms_template_group%
+          label: %aw_propel_sms_template_admin.sms_template_label%
+          label_catalogue: PropelSmsTemplateAdminBundle
     arguments:
         - null
         - Accurateweb\PatientPortalBundle\Model\Sms\SmsTemplate\SmsTemplate
